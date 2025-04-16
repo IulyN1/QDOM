@@ -1,5 +1,7 @@
+// reused grammar rules are defined in the main grammar file
+
 selectStmt
-  = "SELECT" _ func:aggregateFunc _ "(" _ target:funcTarget _ ")" _ "FROM" _ from:selector _ ";"? {
+  = "SELECT" _ func:aggregateFunc _ "(" _ target:starSelector _ ")" _ "FROM" _ from:selector _ ";"? {
       return {
         type: "SELECT",
         func: func,
@@ -14,7 +16,3 @@ aggregateFunc
   / "MIN"   { return "MIN"; }
   / "MAX"   { return "MAX"; }
   / "AVG"   { return "AVG"; }
-
-funcTarget
-  = "*" { return "*"; }
-  / sel:selector { return sel; }
