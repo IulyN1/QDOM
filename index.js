@@ -1,10 +1,16 @@
-import peggy from "peggy";
-import fs from "fs";
+import { parse } from "./parser.js";
 
-const grammar = fs.readFileSync("./select.peggy", "utf8");
-const parser = peggy.generate(grammar);
+const queries = [
+  "SELECT COUNT(*) FROM '#main';",
+  "SELECT SUM('.item') FROM '.container';",
+  "INSERT '<div>OK</div>' INTO '#wrapper';",
+];
 
-const input = "SELECT COUNT(*) FROM '#main';";
-const result = parser.parse(input);
-
-console.log(result);
+for (const q of queries) {
+  try {
+    const result = parse(q);
+    console.log(q, "-->", result);
+  } catch (err) {
+    console.error("Parse error:", q, err.message);
+  }
+}

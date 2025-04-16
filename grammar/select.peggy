@@ -1,6 +1,3 @@
-start
-  = selectStmt
-
 selectStmt
   = "SELECT" _ func:aggregateFunc _ "(" _ target:funcTarget _ ")" _ "FROM" _ from:selector _ ";"? {
       return {
@@ -21,9 +18,3 @@ aggregateFunc
 funcTarget
   = "*" { return "*"; }
   / sel:selector { return sel; }
-
-selector
-  = "'" chars:[a-zA-Z0-9.#-]+ "'" { return chars.join(""); }
-
-_ "whitespace"
-  = [ \t\n\r]*
