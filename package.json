@@ -13,5 +13,8 @@
   "license": "ISC",
   "devDependencies": {
     "peggy": "^4.2.0"
+  },
+  "dependencies": {
+    "vite": "^6.3.2"
   }
 }
