@@ -20,9 +20,10 @@ export function execute(ast) {
 		case 'INSERT':
 			return DOM.insert(ast.values).into(ast.target);
 		case 'UPDATE':
-			const entries = ast.entries.map((entry) => {
+			const entriesArray = ast.entries.map((entry) => {
 				return { [entry.property]: entry.value };
 			});
+			const entries = Object.assign({}, ...entriesArray);
 			return DOM.update(ast.target).set(entries);
 		case 'DELETE':
 			return DOM.delete(ast.target).from(ast.from);

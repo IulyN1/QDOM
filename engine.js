@@ -45,26 +45,24 @@ const DOM = {
 				if (typeof content === 'object') {
 					Object.entries(content).forEach((entry) => {
 						const [key, value] = entry;
-						if (key === 'style') {
-							Object.entries(value).forEach((style) => {
-								elements.forEach((elem) => {
-									const [styleKey, styleValue] = style;
-									elem.style[styleKey] = styleValue;
-								});
+						if (key === 'text') {
+							elements.forEach((elem) => {
+								elem.innerText = value;
 							});
 							return;
-						} else {
-							elements.forEach((elem) => {
-								elem[key] = value;
-							});
 						}
-					});
-				} else if (typeof content === 'string' || typeof content === 'number') {
-					elements.forEach((elem) => {
-						elem.innerHTML = content;
+						if (key === 'html') {
+							elements.forEach((elem) => {
+								elem.innerHTML = value;
+							});
+							return;
+						}
+						elements.forEach((elem) => {
+							elem.style[key] = value;
+						});
 					});
 				} else if (content !== undefined) {
-					console.error('Invalid content type! Expected string, number or object!');
+					console.error('Invalid content type! Expected object!');
 				} else {
 					console.error('No content provided to update!');
 				}
