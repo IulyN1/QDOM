@@ -1,7 +1,7 @@
 // reused grammar rules are defined in the main grammar file
 
 updateStmt
-  = "UPDATE" _ element:selector _ "SET" _ entries:entriestList _ ";"? {
+  = "UPDATE" _ element:selector _ "SET" _ entries:entriestList _ ";" {
       return {
         type: "UPDATE",
         target: element,
