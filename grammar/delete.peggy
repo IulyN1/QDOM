@@ -4,8 +4,8 @@ deleteStmt
   = "DELETE" _ target:starSelector _ "FROM" _ from:selector _ ";" {
       return {
         type: "DELETE",
-        target,
-        from
+        target: target,
+        from: from
       };
     }
   / "DROP" _ sel:selector _ ";" {

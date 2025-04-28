@@ -248,8 +248,8 @@ function peg$parse(input, options) {
   var peg$f6 = function(target, from) {
       return {
         type: "DELETE",
-        target,
-        from
+        target: target,
+        from: from
       };
     };
   var peg$f7 = function(sel) {
@@ -281,16 +281,16 @@ function peg$parse(input, options) {
   var peg$f15 = function(event, target, stmt) {
       return {
         type: "CREATE_TRIGGER",
-        event,
-        target,
+        event: event,
+        target: target,
         statement: stmt
       };
     };
   var peg$f16 = function(event, target) {
       return {
         type: "EXECUTE_TRIGGER",
-        event,
-        target
+        event: event,
+        target: target
       };
     };
   var peg$f17 = function(element, entries) {
@@ -1276,9 +1276,6 @@ function peg$parse(input, options) {
       s0 = peg$parseupdateStmt();
       if (s0 === peg$FAILED) {
         s0 = peg$parseinsertStmt();
-        if (s0 === peg$FAILED) {
-          s0 = peg$parseselectStmt();
-        }
       }
     }
 

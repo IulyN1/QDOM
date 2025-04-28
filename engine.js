@@ -1,3 +1,5 @@
+import DOMPurify from 'dompurify';
+
 const DOM = {
 	select(selector) {
 		return {
@@ -242,7 +244,7 @@ const DOM = {
 						return;
 					}
 					elements.forEach((elem) => {
-						elem.innerHTML += content;
+						elem.innerHTML += DOMPurify.sanitize(content);
 					});
 				} else {
 					console.error('No selector provided!');
@@ -282,7 +284,7 @@ const DOM = {
 						}
 						if (key === 'html') {
 							elements.forEach((elem) => {
-								elem.innerHTML = value;
+								elem.innerHTML = DOMPurify.sanitize(value);
 							});
 							return;
 						}
