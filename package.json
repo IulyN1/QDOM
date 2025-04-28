@@ -1,16 +1,35 @@
 {
-	"name": "qdom",
+	"name": "qdom-dsl",
 	"version": "1.0.0",
-	"description": "QDOM - DOM Manipulation for DBAs",
-	"main": "index.js",
+	"description": "QDOM - Lightweight DOM Manipulation for DBAs",
+	"main": "dist/qdom.min.js",
 	"scripts": {
-		"start": "npx vite build",
-		"build": "node buildParser.js",
+		"build": "npx vite build",
+		"prepublishOnly": "npm run build",
+		"buildParser": "node buildParser.js",
 		"test": "node test.js"
 	},
 	"type": "module",
 	"author": "Iulian-Alexandru Popa",
-	"license": "ISC",
+	"license": "MIT",
+	"keywords": [
+		"qdom",
+		"dom",
+		"dsl",
+		"query",
+		"parser",
+		"html",
+		"peggy",
+		"lightweight"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/IulyN1/QDOM.git"
+	},
+	"homepage": "https://github.com/IulyN1/QDOM#readme",
+	"bugs": {
+		"url": "https://github.com/IulyN1/QDOM/issues"
+	},
 	"devDependencies": {
 		"peggy": "^4.2.0"
 	},

@@ -5,11 +5,11 @@ export default defineConfig({
 		lib: {
 			entry: 'index.js',
 			name: 'QDOM',
-			fileName: 'qdom',
+			fileName: 'qdom.min',
 			formats: ['es']
 		},
 		outDir: 'dist',
 		emptyOutDir: true,
-		minify: 'esbuild'
+		minify: true
 	}
 });
