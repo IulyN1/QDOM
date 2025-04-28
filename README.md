@@ -12,8 +12,6 @@ DELETE '*' FROM '.items';
 
 ✅ No JavaScript knowledge needed — QDOM parses and executes your commands automatically.
 
----
-
 ## 🔥 Features
 
 -   ⚡ Lightweight (only ~53 KB)
@@ -21,8 +19,6 @@ DELETE '*' FROM '.items';
 -   ✨ SQL-like syntax for DOM manipulation
 -   🧩 Easy integration into any project via a `<script>` tag
 -   🔒 Protection against XSS when inserting HTML
-
----
 
 ## 🚀 Installation
 
@@ -43,8 +39,6 @@ UPDATE '#header' SET innerText = 'New Title';
 
 2. **QDOM will automatically parse and execute** the commands when the page loads.
 
----
-
 ## ⚙️ Supported Commands
 
 | Command                                                 | Description                               |
@@ -56,8 +50,6 @@ UPDATE '#header' SET innerText = 'New Title';
 | `SELECT COUNT(*) FROM 'selector';`                      | Count elements                            |
 | `CREATE TRIGGER event ON 'selector' EXECUTE statement;` | Define triggers on DOM events             |
 | `EXECUTE TRIGGER event ON 'selector';`                  | Manually execute a trigger                |
-
----
 
 ## 📚 Development
 
@@ -72,9 +64,3 @@ QDOM uses:
 -   [Vite](https://vite.dev/) for bundling
 -   [Peggy](https://peggyjs.org/) for parsing the DSL
 -   [DOMPurify](https://github.com/cure53/DOMPurify) for sanitizing content
-
----
-
-## 📜 License
-
-MIT License
