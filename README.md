@@ -29,7 +29,7 @@ DELETE '*' FROM '.items';
 ### Import QDOM into the HTML file
 
 ```html
-<script src="https://your-cdn.com/qdom.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qdom-dsl/dist/qdom.min.js"></script>
 ```
 
 ### How to Use
@@ -78,5 +78,3 @@ QDOM uses:
 ## 📜 License
 
 MIT License
-
----
