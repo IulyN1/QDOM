@@ -3,7 +3,7 @@ import { defineConfig } from 'vite';
 export default defineConfig({
 	build: {
 		lib: {
-			entry: 'qdom.js',
+			entry: 'index.js',
 			name: 'QDOM',
 			fileName: 'qdom',
 			formats: ['es']

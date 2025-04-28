@@ -1,33 +1,35 @@
-import { parse } from './parser.js';
+import { parse } from './parser';
+import { execute } from './executor';
 
-let code = `SELECT COUNT(*) FROM '#main';
+// QDOM will be executed when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+	(async () => {
+		const scripts = document.querySelectorAll('script[type="text/qdom"]');
 
-SELECT SUM('.item') FROM '.container';
+		for (const script of scripts) {
+			let code = '';
+			if (script.src) {
+				const res = await fetch(script.src);
+				code = await res.text();
+			} else {
+				code = script.textContent;
+			}
 
-INSERT '<div>OK</div>' INTO '#wrapper';
+			if (!code) {
+				console.error('No code found in script tag!');
+				return;
+			}
 
-UPDATE '#myDiv' SET color = 'red', fontSize = '20px', visible = true;
+			// Remove new lines and extra spaces and filter out empty lines
+			code = code
+				.split('\n')
+				.map((line) => line.trim())
+				.filter((line) => line.length > 0);
 
-DELETE div FROM '#main';
-
-DELETE * FROM '#container';
-
-DROP '#main';
-
-CREATE TRIGGER click ON '#btn' EXECUTE DELETE 'div' FROM '#container';
-
-EXECUTE TRIGGER click ON '#btn';`;
-
-code = code
-	.split('\n')
-	.map((line) => line.trim())
-	.filter((line) => line.length > 0);
-
-for (const command of code) {
-	try {
-		const result = parse(command);
-		console.log(command, '-->', result);
-	} catch (err) {
-		console.error('Parse error:', command, err.message);
-	}
-}
+			for (const command of code) {
+				const ast = parse(command);
+				execute(ast);
+			}
+		}
+	})();
+});

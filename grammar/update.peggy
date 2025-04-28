@@ -15,6 +15,6 @@ entriestList
     }
 
 entry
-  = property:identifier _ "=" _ val:value {
+  = property:identifier _ "=" _ val:(value / "(" selectStmt ")") {
       return { property: property, value: val };
     }
