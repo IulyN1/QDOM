@@ -1,7 +1,7 @@
 {
 	"name": "qdom-dsl",
 	"version": "1.0.0",
-	"description": "QDOM - Lightweight DOM Manipulation for DBAs",
+	"description": "QDOM - Lightweight DOM Manipulation with SQL-like syntax",
 	"main": "dist/qdom.min.js",
 	"scripts": {
 		"build": "npx vite build",
@@ -10,7 +10,7 @@
 		"test": "node test.js"
 	},
 	"type": "module",
-	"author": "Iulian-Alexandru Popa",
+	"author": "Iulian Alexandru Popa",
 	"license": "MIT",
 	"keywords": [
 		"qdom",
