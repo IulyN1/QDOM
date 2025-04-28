@@ -1,4 +1,4 @@
-# QDOM - Lightweight DOM Manipulation with SQL-like syntax
+# QDOM - DOM Manipulation with SQL-like syntax
 
 **QDOM** is a lightweight Domain-Specific Language (DSL) for manipulating the DOM declaratively, inspired by SQL-like syntax.
 
