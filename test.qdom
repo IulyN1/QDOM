@@ -1,0 +1,17 @@
+INSERT '<div>Inserted</div>' INTO '#wrapper';
+
+INSERT (SELECT COUNT(*) FROM '#main') INTO '#countOutput';
+
+UPDATE '#myDiv' SET color = 'red', fontSize = '20px';
+
+UPDATE '#total' SET text = (SELECT SUM('.item') FROM '#main'), color = 'green';
+
+DELETE div FROM '#el';
+
+DELETE * FROM '#container';
+
+DROP '#dropable';
+
+CREATE TRIGGER click ON '#btn' EXECUTE DELETE 'div' FROM '#container2';
+
+EXECUTE TRIGGER click ON '#btn';
