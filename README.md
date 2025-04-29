@@ -36,8 +36,11 @@ You can include the minified version directly in your project with a `<script>` 
 
 ```qdom
 INSERT '<p>Welcome to QDOM!</p>' INTO '#content';
-UPDATE '#header' SET text = 'New Title';
+UPDATE '#title' SET text = 'New Title';
+UPDATE '#header' SET html = '<div>Hello!</div>';
 ```
+
+**Note:** `UPDATE` allows for `text` property which sets the `innerText` property to the given value, and for `html` property which sets the `innerHTML` property to the given value. The rest of the properties are taken for granted and don't present any special rules (`color`, `fontSize`, etc.).
 
 2. **QDOM will automatically parse and execute** the commands when the page loads.
 
