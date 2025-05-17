@@ -1,0 +1,12 @@
+UPDATE '.greeting' SET html = 'Welcome to <i>QDOM</i> demo!', color = 'green';
+
+CREATE TRIGGER click ON 'button[data-id="book"]' EXECUTE INSERT '<div>📘 Book - $<span>30</span></div>' INTO '#cart';
+CREATE TRIGGER click ON 'button[data-id="pen"]' EXECUTE INSERT '<div>🖊️ Pen - $<span>3</span></div>' INTO '#cart';
+CREATE TRIGGER click ON 'button[data-id="notebook"]' EXECUTE INSERT '<div>📒 Notebook - $<span>7</span></div>' INTO '#cart';
+
+CREATE TRIGGER click ON '.add-to-cart' EXECUTE UPDATE '#total span' SET text = (SELECT SUM('div span') FROM '#cart');
+CREATE TRIGGER click ON '.add-to-cart' EXECUTE UPDATE '#items span' SET text = (SELECT COUNT(*) FROM '#cart');
+
+CREATE TRIGGER click ON '#clear-cart' EXECUTE DELETE * FROM '#cart';
+CREATE TRIGGER click ON '#clear-cart' EXECUTE UPDATE '#total span' SET text = 0;
+CREATE TRIGGER click ON '#clear-cart' EXECUTE UPDATE '#items span' SET text = 0;
