@@ -1,6 +1,6 @@
 {
 	"name": "qdom-dsl",
-	"version": "1.0.6",
+	"version": "1.0.7",
 	"description": "QDOM - DOM Manipulation with SQL-like syntax",
 	"main": "dist/qdom.min.js",
 	"scripts": {

@@ -14,7 +14,7 @@ UPDATE '#total' SET text = (SELECT COUNT(*) FROM '.item'), color = 'red';
 
 DELETE div FROM '#main';
 
-DELETE * FROM '#container';
+DELETE * FROM 'div[id="main"]';
 
 DROP '#main';
 
