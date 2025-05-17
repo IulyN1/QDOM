@@ -1,6 +1,6 @@
 import { parse } from './parser.js';
 
-let code = `SELECT COUNT(*) FROM '#main';
+let code = `SELECT COUNT(*) FROM '#main .item';
 
 SELECT SUM('.item') FROM '.container';
 

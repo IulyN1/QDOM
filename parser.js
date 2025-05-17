@@ -201,14 +201,14 @@ function peg$parse(input, options) {
   var peg$c23 = ",";
   var peg$c24 = "=";
 
-  var peg$r0 = /^[a-zA-Z0-9.#_\/[\]()>+=~:"\-]/;
+  var peg$r0 = /^[a-zA-Z0-9.#_\/[\]()>+=~: \-]/;
   var peg$r1 = /^[^']/;
   var peg$r2 = /^[^"]/;
   var peg$r3 = /^[a-zA-Z0-9_\-]/;
   var peg$r4 = /^[ \t\n\r]/;
 
   var peg$e0 = peg$literalExpectation("'", false);
-  var peg$e1 = peg$classExpectation([["a", "z"], ["A", "Z"], ["0", "9"], ".", "#", "_", "/", "[", "]", "(", ")", ">", "+", "=", "~", ":", "\"", "-"], false, false);
+  var peg$e1 = peg$classExpectation([["a", "z"], ["A", "Z"], ["0", "9"], ".", "#", "_", "/", "[", "]", "(", ")", ">", "+", "=", "~", ":", " ", "-"], false, false);
   var peg$e2 = peg$literalExpectation("*", false);
   var peg$e3 = peg$classExpectation(["'"], true, false);
   var peg$e4 = peg$literalExpectation("\"", false);
