@@ -1,4 +1,4 @@
-UPDATE '.greeting' SET html = 'Welcome to <i>QDOM</i> demo!', color = 'green';
+UPDATE '.greeting' SET html = 'Welcome to <i>QDOM</i> store!', color = 'green';
 
 CREATE TRIGGER click ON 'button[data-id="book"]' EXECUTE INSERT '<div>📘 Book - $<span>30</span></div>' INTO '#cart';
 CREATE TRIGGER click ON 'button[data-id="pen"]' EXECUTE INSERT '<div>🖊️ Pen - $<span>3</span></div>' INTO '#cart';

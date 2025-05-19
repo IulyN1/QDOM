@@ -1,38 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>QDOM Demo</title>
-		<link rel="stylesheet" href="styles.css" />
-		<script src="https://cdn.jsdelivr.net/npm/qdom-dsl@1.0.7/dist/qdom.min.js"></script>
-		<script type="text/qdom" src="demo.qdom"></script>
-	</head>
-	<body>
-		<h1 class="greeting">QDOM Demo</h1>
-		<div class="container">
-			<h1>Shop</h1>
-			<div class="products">
-				<div class="product">
-					<span>📘 Book - $30</span>
-					<button class="add-to-cart" data-id="book">Add to Cart</button>
-				</div>
-				<div class="product">
-					<span>🖊️ Pen - $3</span>
-					<button class="add-to-cart" data-id="pen">Add to Cart</button>
-				</div>
-				<div class="product">
-					<span>📒 Notebook - $7</span>
-					<button class="add-to-cart" data-id="notebook">Add to Cart</button>
-				</div>
-			</div>
-			<h2>Cart</h2>
-			<div id="cart"></div>
-			<div class="cart-summary">
-				<div id="total">Total: $<span>0</span></div>
-				<div id="items">Number of items: <span>0</span></div>
-			</div>
-			<button id="clear-cart">Clear Cart</button>
-		</div>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QDOM Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/qdom-dsl/dist/qdom.min.js"></script>
+    <script type="text/qdom" src="demo.qdom"></script>
+  </head>
+  <body>
+    <h1 class="greeting">QDOM</h1>
+    <div class="container">
+      <h1>Shop</h1>
+      <div class="products">
+        <div class="product">
+          <span>📘 Book - $30</span>
+          <button class="add-to-cart" data-id="book">Add to Cart</button>
+        </div>
+        <div class="product">
+          <span>🖊️ Pen - $3</span>
+          <button class="add-to-cart" data-id="pen">Add to Cart</button>
+        </div>
+        <div class="product">
+          <span>📒 Notebook - $7</span>
+          <button class="add-to-cart" data-id="notebook">Add to Cart</button>
+        </div>
+      </div>
+      <h2>Cart</h2>
+      <div id="cart"></div>
+      <div class="cart-summary">
+        <div id="total">Total: $<span>0</span></div>
+        <div id="items">Number of items: <span>0</span></div>
+      </div>
+      <button id="clear-cart">Clear Cart</button>
+    </div>
+  </body>
 </html>
